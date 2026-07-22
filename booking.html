@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BulletVault | Book a Bike</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+.booking-container{
+    max-width:700px;
+    margin:50px auto;
+    background:#1E1E1E;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.booking-container h2{
+    color:#D4AF37;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.booking-container input,
+.booking-container select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    background:#2A2A2A;
+    color:#fff;
+    font-size:16px;
+}
+
+.booking-container button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#D4AF37;
+    color:#121212;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.booking-container button:hover{
+    background:#f2c94c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🏍 BulletVault</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="bikes.html">Bikes</a>
+<a href="accessories.html">Accessories</a>
+<a href="booking.html">Booking</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="booking-container">
+
+<h2>Book Your Royal Enfield</h2>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="bike" required>
+<option value="">Select Bike</option>
+<option>Classic 350</option>
+<option>Bullet 350</option>
+<option>Hunter 350</option>
+<option>Meteor 350</option>
+<option>Himalayan 450</option>
+</select>
+
+<select id="color" required>
+<option value="">Select Color</option>
+<option>Black</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Silver</option>
+</select>
+
+<input type="text" id="pincode" placeholder="Pincode" required>
+
+<input type="date" id="date" required>
+
+<button type="submit">Pay ₹5,000 Booking Token</button>
+
+</form>
+
+</div>
+
+<footer>
+
+<p>© 2026 BulletVault</p>
+
+</footer>
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const bookingId="BV"+Math.floor(Math.random()*100000);
+
+alert(
+"🎉 Booking Successful!\n\n"+
+"Booking ID : "+bookingId+
+"\nBooking Token : ₹5,000 Paid (Demo)"+
+"\n\nThank you for choosing BulletVault!"
+);
+
+this.reset();
+
+});
+
+</script>
+
+</body>
+</html>

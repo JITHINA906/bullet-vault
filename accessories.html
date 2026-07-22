@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BulletVault | Accessories</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/script.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+.cart-box{
+    background:#1f1f1f;
+    padding:20px;
+    margin:40px auto;
+    width:350px;
+    border-radius:10px;
+    text-align:center;
+    color:white;
+}
+
+.cart-total{
+    color:#D4AF37;
+    font-size:22px;
+    margin:15px 0;
+}
+
+.cart-btn{
+    background:#D4AF37;
+    color:#111;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.price{
+    color:#D4AF37;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🏍 BulletVault</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="bikes.html">Bikes</a>
+
+<a href="accessories.html">Accessories</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+
+<section>
+
+<h2>Official Accessories</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="images/helmet.jpg">
+
+<h3>Classic Helmet</h3>
+
+<p class="price">₹3,499</p>
+
+<p>ISI Certified Riding Helmet</p>
+
+<button
+class="btn-small addCart"
+data-name="Helmet"
+data-price="3499">
+
+Add To Cart
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<img src="images/jacket.jpg">
+
+<h3>Riding Jacket</h3>
+
+<p class="price">₹6,999</p>
+
+<p>Water Resistant Touring Jacket</p>
+
+<button
+class="btn-small addCart"
+data-name="Jacket"
+data-price="6999">
+
+Add To Cart
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<img src="images/gloves.jpg">
+
+<h3>Riding Gloves</h3>
+
+<p class="price">₹1,799</p>
+
+<p>Leather Riding Gloves</p>
+
+<button
+class="btn-small addCart"
+data-name="Gloves"
+data-price="1799">
+
+Add To Cart
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<img src="images/boots.jpg">
+
+<h3>Riding Boots</h3>
+
+<p class="price">₹5,999</p>
+
+<p>Adventure Touring Boots</p>
+
+<button
+class="btn-small addCart"
+data-name="Boots"
+data-price="5999">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="cart-box">
+
+<h2>🛒 Shopping Cart</h2>
+
+<p>Items : <span id="items">0</span></p>
+
+<p class="cart-total">
+
+Total : ₹<span id="total">0</span>
+
+</p>
+
+<button class="cart-btn" onclick="checkout()">
+
+Proceed to Checkout
+
+</button>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 BulletVault</p>
+
+</footer>
+
+
+<script>
+
+let total=0;
+
+let items=0;
+
+document.querySelectorAll(".addCart").forEach(button=>{
+
+button.onclick=function(){
+
+let price=parseInt(this.dataset.price);
+
+total+=price;
+
+items++;
+
+document.getElementById("items").innerHTML=items;
+
+document.getElementById("total").innerHTML=total;
+
+alert(this.dataset.name+" Added To Cart");
+
+}
+
+});
+
+function checkout(){
+
+if(items==0){
+
+alert("Your cart is empty.");
+
+}
+
+else{
+
+alert(
+
+"Order Successful 🎉\n\nItems : "+items+
+
+"\nTotal : ₹"+total+
+
+"\n\nThank you for shopping with BulletVault."
+
+);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
