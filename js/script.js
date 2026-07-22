@@ -14,35 +14,43 @@ window.addEventListener("load", () => {
 
 */
 
-/* Book Now Buttons */
+/* ===========================================
+   BulletVault - script.js
+=========================================== */
+
+// Book Now Buttons
 
 const bookButtons = document.querySelectorAll(".btn-small");
 
 bookButtons.forEach(button => {
-    button.addEventListener("click", function (e) {
+
+    button.addEventListener("click", () => {
 
         if (button.textContent.includes("Book")) {
-
-            alert("Redirecting to Booking Page...");
-
+            window.location.href = "booking.html";
         }
 
     });
+
 });
 
 
-/* Card Hover Animation */
+// Card Hover Effect
 
 const cards = document.querySelectorAll(".card");
 
 cards.forEach(card => {
 
     card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-12px) scale(1.03)";
+
+        card.style.transform = "translateY(-10px)";
+
     });
 
     card.addEventListener("mouseleave", () => {
+
         card.style.transform = "translateY(0px)";
+
     });
 
 });
