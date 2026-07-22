@@ -1,0 +1,28 @@
+name: Deploy bullet-store to s3
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v2
+              with:
+                role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+                aws-region: ap-south-1
+
+            - name: Sync files to S3
+              run: |
+                aws s3 sync ./dist s3://bullet-web --delete
+
+            - name: deploy/invalidate to CloudFront
+              run: |
+                aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
