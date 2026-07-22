@@ -52,14 +52,13 @@ nav a:hover{
 
 /* HERO */
 
-.hero{
-    background:url("../images/banner.jpg") center center/cover no-repeat;
-    min-height:85vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
+.hero {
+    height: 100vh;
+    background: url("../images/hero-banner.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero::before{

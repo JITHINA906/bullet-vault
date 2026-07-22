@@ -2,9 +2,9 @@
    BulletVault - script.js
 =========================================== */
 
-console.log("BulletVault Loaded Successfully 🚀");
+// console.log("BulletVault Loaded Successfully 🚀");
 
-/* Welcome Message */
+/* Welcome Message 
 
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
     }, 500);
 });
 
+*/
 
 /* Book Now Buttons */
 
