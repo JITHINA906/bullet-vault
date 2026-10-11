@@ -22,6 +22,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::884244642686:role/GitHubActionsS3DeployRole
           aws-region: ap-south-1
+          audience: sts.amazonaws.com
 
       - name: Sync files to S3
         run: |
